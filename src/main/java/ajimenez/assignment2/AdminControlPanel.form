@@ -34,49 +34,56 @@
                   <Component id="UserTreeScrollPane" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="CreateUserTypeLabel" alignment="0" max="32767" attributes="0"/>
-                  <Component id="CreateSectionLabel" alignment="0" max="32767" attributes="0"/>
-                  <Component id="CreateUserButton" alignment="0" max="32767" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="CreateUserTypeUser" linkSize="5" min="-2" pref="194" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="CreateUserTypeUserGroup" linkSize="5" min="-2" pref="194" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="ShowMessageTotalButton" min="-2" pref="195" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="ShowPositiveButton" min="-2" pref="195" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="UserType" alignment="0" max="32767" attributes="0"/>
-                  <Component id="SelectedUser" alignment="0" max="32767" attributes="0"/>
-                  <Component id="Following" alignment="0" max="32767" attributes="0"/>
-                  <Component id="Messages" alignment="0" max="32767" attributes="0"/>
-                  <Component id="PositivePercentage" alignment="0" max="32767" attributes="0"/>
-                  <Component id="OpenUserViewButton" alignment="0" max="32767" attributes="0"/>
-                  <Component id="DisplayName" alignment="0" max="32767" attributes="0"/>
-                  <Component id="Followers" alignment="0" max="32767" attributes="0"/>
-                  <Component id="UserId" alignment="0" max="32767" attributes="0"/>
-                  <Component id="StatisticsOutput" alignment="0" max="32767" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="ShowUserTotalButton" min="-2" pref="195" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="ShowGroupTotalButton" min="-2" pref="195" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="StatisticsSectionLabel" alignment="0" max="32767" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="CreateUserUserIdLabel" alignment="0" max="32767" attributes="0"/>
-                          <Component id="CreateUserUserId" alignment="0" pref="195" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="CreateUserTypeLabel" alignment="0" max="32767" attributes="0"/>
+                      <Component id="CreateSectionLabel" alignment="0" max="32767" attributes="0"/>
+                      <Component id="CreateUserButton" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="CreateUserTypeUser" linkSize="5" min="-2" pref="194" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="CreateUserTypeUserGroup" linkSize="5" min="-2" pref="194" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="CreateUserDisplayName" min="-2" pref="195" max="-2" attributes="0"/>
-                          <Component id="CreateUserDisplayNameLabel" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="ShowMessageTotalButton" min="-2" pref="195" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="ShowPositiveButton" min="-2" pref="195" max="-2" attributes="0"/>
                       </Group>
+                      <Component id="UserType" alignment="0" max="32767" attributes="0"/>
+                      <Component id="SelectedUser" alignment="0" max="32767" attributes="0"/>
+                      <Component id="Following" alignment="0" max="32767" attributes="0"/>
+                      <Component id="Messages" alignment="0" max="32767" attributes="0"/>
+                      <Component id="PositivePercentage" alignment="0" max="32767" attributes="0"/>
+                      <Component id="OpenUserViewButton" alignment="0" max="32767" attributes="0"/>
+                      <Component id="DisplayName" alignment="0" max="32767" attributes="0"/>
+                      <Component id="Followers" alignment="0" max="32767" attributes="0"/>
+                      <Component id="UserId" alignment="0" max="32767" attributes="0"/>
+                      <Component id="StatisticsOutput" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="ShowUserTotalButton" min="-2" pref="195" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                          <Component id="ShowGroupTotalButton" min="-2" pref="195" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="StatisticsSectionLabel" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="CreateUserUserIdLabel" alignment="0" max="32767" attributes="0"/>
+                              <Component id="CreateUserUserId" alignment="0" pref="195" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="CreateUserDisplayName" min="-2" pref="195" max="-2" attributes="0"/>
+                              <Component id="CreateUserDisplayNameLabel" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="IdVerifyButton" min="-2" pref="195" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="LastUpdatedButton" min="-2" pref="195" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -140,6 +147,11 @@
                           <Component id="ShowGroupTotalButton" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="IdVerifyButton" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                          <Component id="LastUpdatedButton" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="StatisticsOutput" min="-2" pref="48" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
@@ -159,6 +171,9 @@
         </Property>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="StatisticsOutputActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="ShowUserTotalButton">
       <Properties>
@@ -371,6 +386,22 @@
         </Property>
         <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;b&gt;Display Name&lt;/b&gt;"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="IdVerifyButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="User/Group ID Verification"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IdVerifyButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="LastUpdatedButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Last Updated User"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LastUpdatedButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

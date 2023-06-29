@@ -5,6 +5,7 @@
 package ajimenez.assignment2;
 
 import java.awt.Component;
+import java.text.SimpleDateFormat;
 import java.util.Stack;
 import javax.swing.JTree;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -75,12 +76,19 @@ public class AdminControlPanel extends javax.swing.JFrame {
         CreateUserButton = new javax.swing.JButton();
         CreateUserDisplayName = new javax.swing.JTextField();
         CreateUserDisplayNameLabel = new javax.swing.JLabel();
+        IdVerifyButton = new javax.swing.JButton();
+        LastUpdatedButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         StatisticsOutput.setEditable(false);
         StatisticsOutput.setBackground(new java.awt.Color(238, 238, 238));
         StatisticsOutput.setToolTipText("");
+        StatisticsOutput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StatisticsOutputActionPerformed(evt);
+            }
+        });
 
         ShowUserTotalButton.setText("Show User Total");
         ShowUserTotalButton.addActionListener(new java.awt.event.ActionListener() {
@@ -195,6 +203,20 @@ public class AdminControlPanel extends javax.swing.JFrame {
         CreateUserDisplayNameLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         CreateUserDisplayNameLabel.setText("<html><b>Display Name</b>");
 
+        IdVerifyButton.setText("User/Group ID Verification");
+        IdVerifyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IdVerifyButtonActionPerformed(evt);
+            }
+        });
+
+        LastUpdatedButton.setText("Last Updated User");
+        LastUpdatedButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LastUpdatedButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -205,41 +227,46 @@ public class AdminControlPanel extends javax.swing.JFrame {
                     .addComponent(UserTreeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE)
                     .addComponent(UserTreeScrollPane))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(CreateUserTypeLabel)
-                    .addComponent(CreateSectionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(CreateUserButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(CreateUserTypeLabel)
+                        .addComponent(CreateSectionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(CreateUserButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(CreateUserTypeUser, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(CreateUserTypeUserGroup, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(ShowMessageTotalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(ShowPositiveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(UserType)
+                        .addComponent(SelectedUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Following)
+                        .addComponent(Messages)
+                        .addComponent(PositivePercentage)
+                        .addComponent(OpenUserViewButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(DisplayName)
+                        .addComponent(Followers)
+                        .addComponent(UserId)
+                        .addComponent(StatisticsOutput)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(ShowUserTotalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(ShowGroupTotalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(StatisticsSectionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(CreateUserUserIdLabel, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(CreateUserUserId, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(CreateUserDisplayName, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CreateUserDisplayNameLabel))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(CreateUserTypeUser, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(IdVerifyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(CreateUserTypeUserGroup, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(ShowMessageTotalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ShowPositiveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(UserType)
-                    .addComponent(SelectedUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Following)
-                    .addComponent(Messages)
-                    .addComponent(PositivePercentage)
-                    .addComponent(OpenUserViewButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(DisplayName)
-                    .addComponent(Followers)
-                    .addComponent(UserId)
-                    .addComponent(StatisticsOutput)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(ShowUserTotalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ShowGroupTotalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(StatisticsSectionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(CreateUserUserIdLabel, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CreateUserUserId, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(CreateUserDisplayName, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CreateUserDisplayNameLabel))))
+                        .addComponent(LastUpdatedButton, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -298,6 +325,10 @@ public class AdminControlPanel extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(ShowUserTotalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ShowGroupTotalButton, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(IdVerifyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LastUpdatedButton, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(StatisticsOutput, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -409,6 +440,42 @@ public class AdminControlPanel extends javax.swing.JFrame {
         StatisticsOutput.setText(output);
     }//GEN-LAST:event_ShowPositiveButtonActionPerformed
 
+    // Print whether or not all user IDs are valid
+    private void IdVerifyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdVerifyButtonActionPerformed
+        if (IdVerify.isAllValid(data)) {
+            StatisticsOutput.setText("All user IDs are valid.");
+        }
+        else {
+            StatisticsOutput.setText("There are invalid user IDs!");
+        }
+    }//GEN-LAST:event_IdVerifyButtonActionPerformed
+
+    // Find and print the last updated user
+    private void LastUpdatedButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LastUpdatedButtonActionPerformed
+        UserEntity lastUpdatedUser = null;
+        long highestTime = 0;
+        
+        for (UserEntity thisUser : data.getUsers().values()) {
+            // Only check regular users
+            if (thisUser.getLastUpdateTime() > highestTime && thisUser.getClass().getSimpleName().equals("User")) {
+                lastUpdatedUser = thisUser;
+                highestTime = thisUser.getLastUpdateTime();
+            }
+        }
+        
+        if (lastUpdatedUser != null) {
+            SimpleDateFormat sdf = new SimpleDateFormat("MMM d, h:mm:ss a");
+            StatisticsOutput.setText("User last updated: " + lastUpdatedUser.getId() + " at: " + sdf.format(highestTime));
+        }
+        else {
+            StatisticsOutput.setText("There are no valid users!");
+        }
+    }//GEN-LAST:event_LastUpdatedButtonActionPerformed
+
+    private void StatisticsOutputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StatisticsOutputActionPerformed
+    
+    }//GEN-LAST:event_StatisticsOutputActionPerformed
+
     // Update the user tree display
     private void updateTree() {
         DefaultMutableTreeNode root = new DefaultMutableTreeNode(data.getRoot().getId());
@@ -495,6 +562,8 @@ public class AdminControlPanel extends javax.swing.JFrame {
     private javax.swing.JLabel DisplayName;
     private javax.swing.JLabel Followers;
     private javax.swing.JLabel Following;
+    private javax.swing.JButton IdVerifyButton;
+    private javax.swing.JButton LastUpdatedButton;
     private javax.swing.JLabel Messages;
     private javax.swing.JButton OpenUserViewButton;
     private javax.swing.JLabel PositivePercentage;

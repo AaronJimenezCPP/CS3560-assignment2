@@ -116,6 +116,7 @@ public class User extends UserEntity {
     // Add a message to home feed on User View
     public void addToFeed(String messageId) {
         this.feed.add(messageId);
+        this.updateLastUpdateTime();
     }
     
     public List<String> getFeed() {
