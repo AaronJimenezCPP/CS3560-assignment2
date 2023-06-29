@@ -441,15 +441,30 @@ public class AdminControlPanel extends javax.swing.JFrame {
 
     private void IdVerifyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdVerifyButtonActionPerformed
         if (IdVerify.isAllValid(data)) {
-            IdVerifyButton.setText("All user IDs are valid.");
+            StatisticsOutput.setText("All user IDs are valid.");
         }
         else {
-            IdVerifyButton.setText("There are invalid user IDs!");
+            StatisticsOutput.setText("There are invalid user IDs!");
         }
     }//GEN-LAST:event_IdVerifyButtonActionPerformed
 
     private void LastUpdatedButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LastUpdatedButtonActionPerformed
-        // TODO add your handling code here:
+        UserEntity lastUpdatedUser = null;
+        long highestTime = 0;
+        
+        for (UserEntity thisUser : data.getUsers().values()) {
+            if (thisUser.getLastUpdateTime() > highestTime && thisUser.getClass().getSimpleName().equals("User")) {
+                lastUpdatedUser = thisUser;
+                highestTime = thisUser.getLastUpdateTime();
+            }
+        }
+        
+        if (lastUpdatedUser != null) {
+            StatisticsOutput.setText("The last updated user is: " + lastUpdatedUser.getId() + ". Updated at: " + highestTime);
+        }
+        else {
+            StatisticsOutput.setText("There are no valid users!");
+        }
     }//GEN-LAST:event_LastUpdatedButtonActionPerformed
 
     private void StatisticsOutputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StatisticsOutputActionPerformed

@@ -4,20 +4,21 @@
  */
 package ajimenez.assignment2;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  *
  * @author notwj
  */
 public class IdVerify {
-    public static boolean isValid(String id, DataStore data) {
-        if (id.matches("\\s")) return false;
-        else if (data.getUser(id) != null) return false;
-        else return true;
-    }
-    
     public static boolean isAllValid(DataStore data) {
+        Set<String> seenIds = new HashSet(); 
         for (UserEntity user : data.getUsers().values()) {
-            if (!isValid(user.getId(), data)) return false;
+            if (seenIds.contains(user.getId())) return false;
+            seenIds.add(user.getId());
+            
+            if (user.getId().matches("\\s")) return false;
         }
         
         return true;
