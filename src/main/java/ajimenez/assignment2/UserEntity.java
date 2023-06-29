@@ -19,6 +19,8 @@ public abstract class UserEntity {
     private String id;
     private UserEntity parent;
     private String displayName;
+    private final long creationTime = System.currentTimeMillis();
+    private long lastUpdateTime  = creationTime;
     
     protected DataStore data;
     
@@ -62,6 +64,7 @@ public abstract class UserEntity {
     
     public void setDisplayName(String newDisplayName) {
         this.displayName = newDisplayName;
+        this.updateLastUpdateTime();
     } 
     
     protected UserEntity getParent() {
@@ -74,6 +77,18 @@ public abstract class UserEntity {
     
     public List<UserEntity> getChildren() {
         return new ArrayList();
+    }
+    
+    public long getCreationTime() {
+        return this.creationTime;
+    }
+    
+    public void updateLastUpdateTime() {
+        this.lastUpdateTime = System.currentTimeMillis();
+    }
+    
+    public long getLastUpdateTime() {
+        return this.lastUpdateTime;
     }
     
     public abstract void accept(UserEntityVisitor visitor);
