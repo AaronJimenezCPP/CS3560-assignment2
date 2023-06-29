@@ -11,6 +11,8 @@ import java.util.Set;
  *
  * @author notwj
  */
+
+// Used to verify that all user id's are valid
 public class IdVerify {
     public static boolean isAllValid(DataStore data) {
         Set<String> seenIds = new HashSet(); 

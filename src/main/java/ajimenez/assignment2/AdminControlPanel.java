@@ -440,6 +440,7 @@ public class AdminControlPanel extends javax.swing.JFrame {
         StatisticsOutput.setText(output);
     }//GEN-LAST:event_ShowPositiveButtonActionPerformed
 
+    // Print whether or not all user IDs are valid
     private void IdVerifyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdVerifyButtonActionPerformed
         if (IdVerify.isAllValid(data)) {
             StatisticsOutput.setText("All user IDs are valid.");
@@ -449,11 +450,13 @@ public class AdminControlPanel extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_IdVerifyButtonActionPerformed
 
+    // Find and print the last updated user
     private void LastUpdatedButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LastUpdatedButtonActionPerformed
         UserEntity lastUpdatedUser = null;
         long highestTime = 0;
         
         for (UserEntity thisUser : data.getUsers().values()) {
+            // Only check regular users
             if (thisUser.getLastUpdateTime() > highestTime && thisUser.getClass().getSimpleName().equals("User")) {
                 lastUpdatedUser = thisUser;
                 highestTime = thisUser.getLastUpdateTime();
