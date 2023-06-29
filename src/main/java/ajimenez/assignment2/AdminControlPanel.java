@@ -5,6 +5,7 @@
 package ajimenez.assignment2;
 
 import java.awt.Component;
+import java.text.SimpleDateFormat;
 import java.util.Stack;
 import javax.swing.JTree;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -460,7 +461,8 @@ public class AdminControlPanel extends javax.swing.JFrame {
         }
         
         if (lastUpdatedUser != null) {
-            StatisticsOutput.setText("The last updated user is: " + lastUpdatedUser.getId() + ". Updated at: " + highestTime);
+            SimpleDateFormat sdf = new SimpleDateFormat("MMM d, h:mm:ss a");
+            StatisticsOutput.setText("User last updated: " + lastUpdatedUser.getId() + " at: " + sdf.format(highestTime));
         }
         else {
             StatisticsOutput.setText("There are no valid users!");

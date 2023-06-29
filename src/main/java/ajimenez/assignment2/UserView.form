@@ -37,14 +37,6 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="FollowUserIdButton" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="Followers" min="-2" pref="180" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Component id="Following" min="-2" pref="180" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" max="-2" attributes="0"/>
-                              <Component id="Messages" min="-2" pref="180" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="HomeFeedScrollPane" max="32767" attributes="0"/>
@@ -54,6 +46,21 @@
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="FollowingLabel" max="32767" attributes="0"/>
                                   <Component id="FollowingListScrollPane" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="Followers" min="-2" pref="180" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="Following" min="-2" pref="180" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                                  <Component id="Messages" min="-2" pref="180" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="CreationTime" min="-2" pref="273" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="LastUpdate" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -74,10 +81,15 @@
                   <Component id="Following" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                   <Component id="Messages" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="LastUpdate" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                  <Component id="CreationTime" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="FollowUserIdButton" pref="32" max="32767" attributes="0"/>
-                  <Component id="FollowUserId" max="32767" attributes="0"/>
+                  <Component id="FollowUserIdButton" max="32767" attributes="0"/>
+                  <Component id="FollowUserId" min="-2" pref="32" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -87,7 +99,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="HomeFeedScrollPane" max="32767" attributes="0"/>
-                  <Component id="FollowingListScrollPane" pref="200" max="32767" attributes="0"/>
+                  <Component id="FollowingListScrollPane" min="-2" pref="200" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="MessageLabel" min="-2" pref="32" max="-2" attributes="0"/>
@@ -243,6 +255,24 @@
           <Font name="Segoe UI" size="14" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Send Message"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="LastUpdate">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;b&gt;Last Update:&lt;/b&gt; 10"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="CreationTime">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;b&gt;Creation Time:&lt;/b&gt; 10"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>
